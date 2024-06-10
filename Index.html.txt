@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dunham Blueprint Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .input-section, .output-section {
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .output-group {
+            margin-bottom: 10px;
+        }
+        .output-group label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dunham Blueprint Builder</h1>
+        <div class="input-section">
+            <div class="input-group">
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName">
+            </div>
+            <button onclick="handleSubmit()">Submit</button>
+        </div>
+        <div class="output-section">
+            <div class="output-group">
+                <label for="answer1">Answer 1:</label>
+                <div id="answer1"></div>
+            </div>
+            <div class="output-group">
+                <label for="answer2">Answer 2:</label>
+                <div id="answer2"></div>
+            </div>
+            <div class="output-group">
+                <label for="answer3">Answer 3:</label>
+                <div id="answer3"></div>
+            </div>
+            <div class="output-group">
+                <label for="answer4">Answer 4:</label>
+                <div id="answer4"></div>
+            </div>
+            <div class="output-group">
+                <label for="answer5">Answer 5:</label>
+                <div id="answer5"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleSubmit() {
+            const companyName = document.getElementById('companyName').value;
+            const cannedResults = [
+                `Welcome to ${companyName}!`,
+                `${companyName} is committed to excellence.`,
+                `At ${companyName}, we value our customers.`,
+                `${companyName} strives for innovation.`,
+                `Thank you for choosing ${companyName}.`
+            ];
+            document.getElementById('answer1').textContent = cannedResults[0];
+            document.getElementById('answer2').textContent = cannedResults[1];
+            document.getElementById('answer3').textContent = cannedResults[2];
+            document.getElementById('answer4').textContent = cannedResults[3];
+            document.getElementById('answer5').textContent = cannedResults[4];
+        }
+    </script>
+</body>
+</html>
